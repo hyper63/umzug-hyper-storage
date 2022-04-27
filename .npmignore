@@ -1,2 +1,5 @@
-./src
-./coverage
+src
+coverage
+integration
+hyper-nano
+__hyper__
