@@ -1,7 +1,7 @@
 {
   "name": "umzug-hyper-storage",
   "version": "1.0.0",
-  "description": "",
+  "description": "A zero-dependency Storage Adapter for Umzug that uses a Hyper Data Service to track migrations",
   "keywords": [
     "umzug",
     "storage",
@@ -29,10 +29,10 @@
   "module": "./dist/index.module.js",
   "source": "src/index.ts",
   "scripts": {
-    "build": "microbundle",
+    "build": "rimraf dist && microbundle",
     "dev": "microbundle watch",
     "test": "uvu -r tsm src '.*.test.ts'",
-    "test:coverage": "c8 npm test",
+    "test:coverage": "rimraf coverage && c8 npm test",
     "format": "standard --fix . ./**/*.ts",
     "prepare": "husky install"
   },
@@ -53,7 +53,8 @@
     "uvu": "^0.5.3"
   },
   "peerDependencies": {
-    "hyper-connect": ">=0.1.19"
+    "hyper-connect": ">=0.1.19",
+    "umzug": ">=3"
   },
   "standard": {
     "parser": "@typescript-eslint/parser"
