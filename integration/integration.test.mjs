@@ -39,7 +39,6 @@ test('should run the migration', async () => {
     }
   }
 
-  console.log('running test')
   const umzug = new Umzug({
     migrations: [
       migration

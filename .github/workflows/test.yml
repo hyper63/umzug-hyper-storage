@@ -65,3 +65,23 @@ jobs:
 
       - name: ⚡ Run tests
         run: npm run test:coverage
+
+  integration:
+    name: ⚡ Integration Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.x
+
+      - name: 📥 Download deps
+        uses: bahmutov/npm-install@v1
+
+      - run: npm run build
+
+      - name: ⚡ Run integration tests
+        run: npm run test:integration
