@@ -45,7 +45,7 @@ export class HyperStorage implements UmzugStorage {
   async logMigration ({ name }: MigrationParams<unknown>) {
     try {
       const doc = await this._findOrCreateMigrationDoc()
-      doc.migrations.push(name)
+      doc.migrations = [...doc.migrations, name]
       await this._updateMigrationDoc(doc)
     } catch (err) {
       throw new Error(`Could not log migration ${name}: ${(err as Error).message}`)
