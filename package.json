@@ -1,6 +1,6 @@
 {
   "name": "umzug-hyper-storage",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A zero-dependency Storage Adapter for Umzug that uses a Hyper Data Service to track migrations",
   "keywords": [
     "umzug",
