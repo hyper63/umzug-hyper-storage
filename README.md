@@ -102,7 +102,7 @@ added to hyper data service:
 
 ```ts
 interface HyperStorageDocArgs {
-  // the id of the meta document. Defaults to 'hyper-scripts-meta'
+  // the _id of the meta document. Defaults to 'hyper-scripts-meta'
   id?: string;
   // the type of the meta document. Defaults to '__scripts'
   type?: string;
