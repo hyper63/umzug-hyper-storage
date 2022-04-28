@@ -1,4 +1,9 @@
 src
+.husky
+.github
+.gitpod.yml
+.versionrc
+lint-staged.config.cjs
 coverage
 integration
 hyper-nano
