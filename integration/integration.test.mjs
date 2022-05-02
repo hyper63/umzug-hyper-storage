@@ -9,8 +9,6 @@ import { connect } from 'hyper-connect'
 import { HyperStorage } from '../dist/index.js'
 
 await $`curl https://hyperland.s3.amazonaws.com/hyper -o ./hyper-nano && chmod +x ./hyper-nano`
-// database isn't clearing for some reason on purge, so will just destroy the whole folder for now
-await $`npx rimraf __hyper__`
 const hyper = $`./hyper-nano --experimental --data --purge`
 
 // eslint-disable-next-line
