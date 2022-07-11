@@ -6,7 +6,7 @@ import * as assert from 'uvu/assert'
 import { Umzug } from 'umzug'
 import { connect } from 'hyper-connect'
 
-import { HyperStorage } from '../dist/index.js'
+import { HyperStorage } from '../dist/index.modern.js'
 
 await $`curl https://hyperland.s3.amazonaws.com/hyper -o ./hyper-nano && chmod +x ./hyper-nano`
 const hyper = $`./hyper-nano --experimental --data --purge`
