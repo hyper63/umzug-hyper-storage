@@ -28,6 +28,7 @@
   "unpkg": "./dist/index.umd.js",
   "module": "./dist/index.module.js",
   "source": "src/index.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "rimraf dist && microbundle",
     "dev": "microbundle watch",
