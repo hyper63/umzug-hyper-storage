@@ -21,6 +21,9 @@
   "license": "Apache-2.0",
   "author": "tyler@hyper.io",
   "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
   "exports": {
     "require": "./dist/index.cjs",
     "default": "./dist/index.modern.js"
@@ -40,21 +43,21 @@
     "test:integration": "zx integration/integration.test.js"
   },
   "devDependencies": {
-    "@types/sinon": "^10.0.11",
-    "@typescript-eslint/parser": "^5.21.0",
-    "c8": "^7.11.2",
-    "husky": "^7.0.4",
-    "hyper-connect": "^0.1.19",
-    "lint-staged": "^12.4.1",
-    "microbundle": "^0.15.0",
-    "rimraf": "^3.0.2",
-    "sinon": "^13.0.2",
+    "@types/sinon": "^10.0.13",
+    "@typescript-eslint/parser": "^5.53.0",
+    "c8": "^7.13.0",
+    "husky": "^8.0.3",
+    "hyper-connect": "^0.6.2",
+    "lint-staged": "^13.1.2",
+    "microbundle": "^0.15.1",
+    "rimraf": "^4.1.2",
+    "sinon": "^15.0.1",
     "standard": "^17.0.0",
-    "tsm": "^2.2.1",
-    "typescript": "^4.6.3",
-    "umzug": "^3.1.1",
-    "uvu": "^0.5.3",
-    "zx": "^6.1.0"
+    "tsm": "^2.3.0",
+    "typescript": "^4.9.5",
+    "umzug": "^3.2.1",
+    "uvu": "^0.5.6",
+    "zx": "^7.1.1"
   },
   "peerDependencies": {
     "hyper-connect": ">=0.1.19",
