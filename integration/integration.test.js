@@ -23,7 +23,11 @@ test.after(async () => {
 })
 
 test('should run the migration', async () => {
-  const hyper = connect('http://localhost:6363/test')
+  /**
+   * TODO: cannot use localhost until
+   * https://github.com/nodejs/undici/issues/1602 is resolved
+   */
+  const hyper = connect('http://127.0.0.1:6363/test')
   const migration = {
     name: '00-test-migration',
     async up () {
@@ -41,7 +45,11 @@ test('should run the migration', async () => {
     migrations: [
       migration
     ],
-    storage: new HyperStorage({ hyper: connect('http://localhost:6363/test') })
+    /**
+     * TODO: cannot use localhost until
+     * https://github.com/nodejs/undici/issues/1602 is resolved
+     */
+    storage: new HyperStorage({ hyper: connect('http://127.0.0.1:6363/test') })
   })
 
   await umzug.up()
