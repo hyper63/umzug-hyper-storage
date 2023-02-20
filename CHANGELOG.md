@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/hyper63/umzug-hyper-storage/compare/v1.0.5...v2.0.0) (2023-02-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop support for node 14
+
+* drop support for node 14 ([c54f29a](https://github.com/hyper63/umzug-hyper-storage/commit/c54f29a7ffbed9f134f8f68c871de0581aee0610))
+
 ### [1.0.5](https://github.com/hyper63/umzug-hyper-storage/compare/v1.0.4...v1.0.5) (2022-07-11)
 
 
