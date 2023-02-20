@@ -87,7 +87,11 @@ export class HyperStorage implements UmzugStorage {
       }
       doc = undefined
     } else {
-      doc = res as HyperStorageDoc
+      /**
+       * support both hyper-connect <0.6.0 && >=0.6.0
+       * by grabbing 'doc' or the response itself as the doc (legacy get)
+       */
+      doc = (res.doc || res) as HyperStorageDoc
     }
 
     // Found
@@ -109,7 +113,7 @@ export class HyperStorage implements UmzugStorage {
     if (!newDocRes.ok) {
       newDocRes = newDocRes as NotOkResult
       if (newDocRes.status && newDocRes.status >= 400) {
-        throw new FromHyperError(res, 'Could not create migration doc')
+        throw new FromHyperError(newDocRes, 'Could not create migration doc')
       }
     }
 
