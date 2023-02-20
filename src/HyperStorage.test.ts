@@ -12,8 +12,11 @@ const hyper = {
   data: {
     add: async () => ({ ok: true }),
     get: async () => ({
-      _id: 'hyper-scripts-meta',
-      migrations: ['bar']
+      ok: true,
+      doc: {
+        _id: 'hyper-scripts-meta',
+        migrations: ['bar']
+      }
     }),
     update: async () => ({ ok: true })
   }
@@ -32,6 +35,28 @@ test('FromHyperErr - should use the default message', () => {
 test('should require hyper', () => {
   // @ts-ignore
   assert.throws(() => new HyperStorage(), 'hyper is a required option and must be an instance of hyper-connect')
+})
+
+test('should support both get and legacy get from hyper', async () => {
+  try {
+    await hyperStorage.logMigration(migrationParams)
+  } catch (err) {
+    assert.unreachable(err.message)
+  }
+
+  const legacyGetStub = sinon.stub(hyper.data, 'get')
+    // @ts-ignore
+    .callsFake(async () => ({
+      _id: 'hyper-scripts-meta',
+      migrations: ['bar']
+    }))
+
+  try {
+    await hyperStorage.logMigration(migrationParams)
+    legacyGetStub.restore()
+  } catch (err) {
+    assert.unreachable(err.message)
+  }
 })
 
 test('logMigration - should log the migration', async () => {
