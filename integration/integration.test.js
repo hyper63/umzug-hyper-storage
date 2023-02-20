@@ -9,7 +9,7 @@ import { connect } from 'hyper-connect'
 import { HyperStorage } from '../dist/index.modern.js'
 
 await $`curl https://hyperland.s3.amazonaws.com/hyper -o ./hyper-nano && chmod +x ./hyper-nano`
-const hyper = $`./hyper-nano --experimental --data --purge`
+const hyper = $`./hyper-nano --experimental --data --purge`.nothrow()
 
 // eslint-disable-next-line
 await new Promise(async resolve => {
